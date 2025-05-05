@@ -7,6 +7,10 @@ import pages.CartPage;
 
 import static com.codeborne.selenide.Selenide.back;
 
+/**
+ * Provides step definitions for cart-related actions in UI tests.
+ * Encapsulates interactions with the `ProductPage` and `CartPage` classes.
+ */
 public class CartSteps {
 
     private final ProductPage productPage;

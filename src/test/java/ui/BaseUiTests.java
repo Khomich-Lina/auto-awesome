@@ -8,6 +8,10 @@ import util.ConfigLoader;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 
+/**
+ * Abstract base class for UI tests.
+ * Provides common setup and teardown functionality for all UI test classes.
+ */
 public abstract class BaseUiTests {
 
     protected MainPage mainPage;

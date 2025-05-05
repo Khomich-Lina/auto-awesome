@@ -4,11 +4,9 @@ import assertions.CartAssertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pages.CartPage;
 import pages.ProductPage;
 import steps.CartSteps;
 
-import static com.codeborne.selenide.Selenide.page;
 import static util.Constants.*;
 
 public class CartTests extends BaseUiTests {
@@ -19,7 +17,7 @@ public class CartTests extends BaseUiTests {
 
     @BeforeEach
     public void initializeTestPage() {
-        productPage = page(ProductPage.class);
+        productPage = new ProductPage();
         cartAssertions = new CartAssertions();
         cartSteps = new CartSteps(productPage);
     }
