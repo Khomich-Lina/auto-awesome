@@ -10,9 +10,9 @@ public class CartSteps {
     private final ProductPage productPage;
     private final CartPage cartPage;
 
-    public CartSteps(ProductPage productPage, CartPage cartPage) {
+    public CartSteps(ProductPage productPage) {
         this.productPage = productPage;
-        this.cartPage = cartPage;
+        this.cartPage = new CartPage();
     }
 
     public void addProductToCart(String category, int productId, String shippingOption) {

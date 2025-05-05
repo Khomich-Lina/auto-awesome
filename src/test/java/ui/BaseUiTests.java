@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 
 public abstract class BaseUiTests {
 
-    protected  MainPage mainPage;
+    protected MainPage mainPage;
     protected static final ConfigLoader configLoader = new ConfigLoader();
     private static final String BASE_URL = configLoader.getProperty("plexus.home.page");
 
@@ -20,7 +20,6 @@ public abstract class BaseUiTests {
         mainPage = new MainPage();
         mainPage.acceptCookies();
     }
-
 
     @AfterEach
     public void tearDown() {

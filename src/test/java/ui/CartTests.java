@@ -14,14 +14,14 @@ import static util.Constants.*;
 public class CartTests extends BaseUiTests {
 
     private ProductPage productPage;
-    private  CartAssertions cartAssertions;
+    private CartAssertions cartAssertions;
     private CartSteps cartSteps;
 
     @BeforeEach
     public void initializeTestPage() {
         productPage = page(ProductPage.class);
         cartAssertions = new CartAssertions();
-        cartSteps = new CartSteps(productPage, page(CartPage.class));
+        cartSteps = new CartSteps(productPage);
     }
 
     @AfterEach

@@ -44,7 +44,7 @@ public class ProductPage extends BasePage {
     }
 
     public void selectProductById(int productId) {
-        productItems.get(productId-1).click();
+        productItems.get(productId - 1).click();
     }
 
     public void selectShippingOption(String optionValue) {
@@ -60,12 +60,12 @@ public class ProductPage extends BasePage {
     }
 
     public String getAlertMessage() {
-        String alertText =  alertMessage.shouldBe(visible).getText();
+        String alertText = alertMessage.shouldBe(visible).getText();
         alertMessage.should(disappear);
         return alertText;
     }
 
-    public void clickOnBreadcrumbWithName(String name){
-        breadcrumb.$(By.xpath(".//*[contains(text(),'"+name+"')]")).click();
+    public void clickOnBreadcrumbWithName(String name) {
+        breadcrumb.$(By.xpath(".//*[contains(text(),'" + name + "')]")).click();
     }
 }

@@ -20,7 +20,7 @@ public class CartPage extends BasePage {
         page(this);
     }
 
-    public Double calculateProductPurchasedPrice(){
+    public Double calculateProductPurchasedPrice() {
         Double totalPrice = 0.0;
         purchasedProducts.get(0).shouldBe(visible);
         for (SelenideElement product : purchasedProducts) {
