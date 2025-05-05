@@ -1,6 +1,7 @@
 package pages;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,19 +21,15 @@ public class CartPage extends BasePage {
         page(this);
     }
 
-    public Double calculateProductPurchasedPrice() {
-        Double totalPrice = 0.0;
+    public List<Double> getPurchasedProductPrices() {
         purchasedProducts.get(0).shouldBe(visible);
-        for (SelenideElement product : purchasedProducts) {
-            String price = product.$x(".//*[contains(@class,'price')]/strong").getText();
-            totalPrice = totalPrice + Double
-                    .parseDouble(price.replace("$", ""));
-        }
-        return totalPrice;
+        return purchasedProducts.stream()
+                .map(product -> product.$x(".//*[contains(@class,'price')]/strong").getText())
+                .map(text -> Double.parseDouble(text.replace("$", "")))
+                .collect(Collectors.toList());
     }
 
     public Double getTotalPrice() {
         return Double.parseDouble(totalPrice.getText().replace("$", ""));
     }
-
 }

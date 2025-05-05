@@ -1,5 +1,7 @@
 package steps;
 
+import java.util.List;
+
 import pages.ProductPage;
 import pages.CartPage;
 
@@ -35,6 +37,7 @@ public class CartSteps {
     }
 
     public Double calculateCartPrice() {
-        return cartPage.calculateProductPurchasedPrice();
+        List<Double> prices = cartPage.getPurchasedProductPrices();
+        return prices.stream().mapToDouble(Double::doubleValue).sum();
     }
 }
